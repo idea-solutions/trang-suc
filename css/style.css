@@ -909,7 +909,7 @@ body {
 
 /* article */
 .article {
-    background-image: url('./assets/home/img-article/1.webp');
+    background-image: url(../img/img-article/1.webp);
     background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
