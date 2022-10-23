@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/favicon.webp"type="image/x-icon">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../register/css/style.css">
+    <link rel="stylesheet" href="../login/css/style.css">
+</head>
+<body>  
+        <!-- 
+            1.Header
+                +Header-information
+                + Header-link
+                -icon - logo - cart
+                 -  navigation
+            2.Silder
+            3.Content
+                - Img
+                - danh mục sản phẩm
+                - Hot deal
+                - information
+                - tin tức khuyến mãi
+                - silder
+            4. section
+            5.footer
+         -->
+        <div class="app">
+            <header class="header">
+                <div class="header-top hide-mobile">
+                    <div class="header-infor">
+                     
+                        <i class="header-infor__user fa-solid fa-user">
+                          <div class="btn-user">
+                            <a href="../register/" class="btn-register">
+                              <i class="fa-solid fa-user-plus"></i>Đăng kí
+                            </a>
+                            <a href="../login/" class="btn-login">
+                              <i class="fa-solid fa-right-to-bracket"></i>
+                              Đăng nhập
+                            </a>
+                            <div class="header-link__cart header-link__cart--none">
+                              <i class="header-link__bag fa-solid fa-bag-shopping">
+                                  <div class="header-link__bag-items">
+                                      <h5>Không có sản phẩm</h5>
+                                  </div>
+                              </i>   
+                              <span class="header-link__amount">0</span>
+                          </div>
+                          </div>
+                              
+                        </i>
+                        <div class="header-infor__contact">
+                           <span> Gọi ngay :</span>
+                            <a class="header-infor__phone" href="callto:1900 7750"> 1900 6750 -</a>
+                            <span class="header-infor__discrip">Hỗ trợ 7 ngày trong tuần 9h - 21h</span>
+                            <div class="header-infor__search">
+                                <input type="text" class="header-infor__input" placeholder="Search">
+                                <button class="header-infor__btn">
+                                    <i class="header-infor__icon-search fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                            <div class="header-infor__link" onClick ="showVND(this)">
+                              VND
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <header class="header-link">
+                    <div class="header-link__icons hide-mobile">
+                        <a  href="https://www.facebook.com/" class="header-link__icon"><i class="fa-brands fa-facebook-f"></i></a>
+                       <a  href="https://www.pinterest.com/" class="header-link__icon"> <i class="fa-brands fa-pinterest"></i></a>
+                       <a  href="https://myaccount.google.com/profile" class="header-link__icon"> <i class="fa-brands fa-google-plus-g"></i></a>
+                     <a  href="https://www.instagram.com/" class="header-link__icon">   <i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                  
+                    <div class="header-link__logo">
+                      <div class="header-link__icon-mobile-left">
+                        <i class="fa-solid fa-left-long"></i>
+                      </div>
+                      <div class="header-link__icon-mobile-left active">
+                        <i class="fa-solid fa-bars"></i>
+                       </div>
+                            <a href="../"><img  class="header-link__img" src="../logo/logo.webp" alt=""></a>
+                    </div>
+                    <div class="header-link__cart hide-mobile">
+                        <a href="../cart/">
+                            <i class="header-link__bag fa-solid fa-bag-shopping">
+                                <div class="header-link__bag-items">
+                                    <h5>Không có sản phẩm</h5>
+                                </div>
+                            </i> 
+                           </a>  
+                        <span class="header-link__amount">0</span>
+                    </div>
+                    <div class="header-link__icon-mobile-right show">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <i class="mobile-user fa-solid fa-user">
+                        <div class="btn-user btn-user__mobile">
+                          <button class="btn-register">
+                            <i class=" fa-solid fa-user-plus"></i>Đăng kí
+                          </button>
+                          <button class="btn-login">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            Đăng nhập
+                          </button>
+                          <div class="header-link__cart">
+                           <small> Giỏ hàng</small>
+                            <i class="header-link__bag fa-solid fa-bag-shopping">
+                                <div class="header-link__bag-items">
+                                    <h5>Không có sản phẩm</h5>
+                                </div>
+                            </i>   
+                            <span class="header-link__amount hide-mobile">0</span>
+                        </div>
+                        </div>
+                      </i>
+
+                    </div>
+                </header>
+                <div class="header-navigation">
+                    <ul class="header-navigation__list header-navigation__list--mobile">
+                        <li class="header-navigation__item">
+                            <a href="../" class="header-navigation__link">Trang chủ</a>
+                        </li>
+                        <li class="header-navigation__item">
+                            <div class="header-navigation__link header-navigation__link-1">
+                                Sản phẩm
+                                <i class="header-navigation__link-icon fa-solid fa-chevron-down"></i>
+                                <ul class="header-navigation__products hide-mobile">
+                                    <li class="header-navigation__product">
+                                        <a href="" class="header-navigation__product-link">
+                                            Nhẫn
+                                        </a>
+                                    </li>
+                                    <li class="header-navigation__product">
+                                        <div class="header-navigation__product-link">
+                                            Bông tai
+                                            <i class="header-navigation__product-icon fa-solid fa-angle-right"></i>
+                                            <ul class="header-navigation__products-1">
+                                                <li class="header-navigation__product-1">
+                                                    <a href="" class="header-navigation__product-1-link">
+                                                        Bông tai mới
+                                                    </a>
+                                                </li>
+                                                <li class="header-navigation__product-1">
+                                                    <a href="" class="header-navigation__product-1-link">
+                                                        Bông tai 2018
+                                                    </a>
+                                                </li>
+                                                <li class="header-navigation__product-1">
+                                                    <a href="" class="header-navigation__product-1-link">
+                                                       Bông tai kim cương
+                                                    </a>
+                                                </li>
+                                    
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="header-navigation__product">
+                                        <a href="" class="header-navigation__product-link">
+                                           Dây chuyền
+                                        </a>
+                                    </li>
+                                    <li class="header-navigation__product">
+                                        <a href="" class="header-navigation__product-link">
+                                            Trâm cài
+                                        </a>
+                                    </li>
+                                </ul>
+                          
+                            </div>
+                        </li>
+                        <li class="header-navigation__item">
+                            <a href="" class="header-navigation__link">Blog</a>
+                        </li>
+                        <li class="header-navigation__item">
+                            <a href="" class="header-navigation__link">Giới thiệu</a>
+                        </li>
+                        <li class="header-navigation__item">
+                            <a href="" class="header-navigation__link"> Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!-- ---Header---- -->
+        <div class="content-full">
+            <div class="content">
+                <div class="register-form">
+                    <a class="register-form__home" href="../">Trang chủ</a><i class="register-form__right fa-solid fa-angle-right"></i>
+                    <span class="register-form__span"> Đăng nhập tài khoản</span>
+                    <a  class="register-form__title" href="">Đăng nhập tài khoản</a>
+                    <div class="register-form__fb-gg">
+                   
+                    <a href="https://www.facebook.com/" class="register-form__control register-form__fb">
+                            <i class="fa-brands fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://mail.google.com/mail/u/0/?pli=1#inbox" class="register-form__control register-form__gg">
+                            <i class="fa-brands fa-google"></i>
+                            <span>Goggle</span>
+                        </a>
+                    </div>
+
+                    <!--  -->
+                    <p class="register-form__disrip">
+                        Nếu  có tài khoản vui lòng đăng nhập tại đây
+                    </p>
+                    <form action="" id="form-rigister-1">
+                        <div class="register-form__group">
+                            <div class="rg-form-control">
+                             <label for="email">Email<span>*</span></label>
+                             <input type="email" value="" placeholder="Email..." id="email" name="email">
+                             <span class="rg-form-message"></span>
+                            </div>
+                            <div class="rg-form-control rg-form-control__login hidden-low-tablet">
+                                <span>Bạn quên mật khẩu? Nhập địa chỉ email để lấy lại mật khẩu qua email.</span>
+                             <label for="take-email">Email<span>*</span></label>
+                             <input type="email" value="" placeholder="Email..."  id="take-email" name="take-email">
+                             <span class="rg-form-message"></span>
+                            </div>
+                           
+                         </div>
+                        <div class="register-form__group">
+                            <div class="rg-form-control">
+                                
+                                <label for="password">Mật khẩu<span>*</span></label>
+                                <input type="password" placeholder="Mật khẩu" value="" id="password" name="password">
+                                <span class="rg-form-message"></span>
+                               </div>
+                               <button class="register-form__btn register-form__make-pass hidden-low-tablet">Lấy lại mật khẩu</button>
+                           
+                        </div>
+                        <!--  -->
+                        <button class="register-form__btn register-form__register">Đăng nhập</button>
+                        <div class="register-form__group hidden-above-tablet show-low-tablet">
+                            <div class="rg-form-control rg-form-control__login ">
+                                <span>Bạn quên mật khẩu? Nhập địa chỉ email để lấy lại mật khẩu qua email.</span>
+                                <label for="take-email">Email<span>*</span></label>
+                                <input type="email" value="" placeholder="Email..."  id="take-email" name="take-email">
+                                <span class="rg-form-message"></span>
+                            </div>
+                            <button class="register-form__btn register-form__make-pass ">Lấy lại mật khẩu</button>
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+           
+         
+            <footer class="footer">
+                <div class="footer__block">
+                  <img src="../logo/logo.webp" alt="" class="footer__logo">
+                  <p>Theme Trang sức là một theme bán hàng thân thiện với mobile. Với cơ chế tùy chỉnh hoàn hảo cho phép quý khách tùy chỉnh màu sắc, bố cục.</p>
+
+                  <span> <i class="fa-solid fa-location-dot"></i> Ladeco Building, 266 Doi Can Street, Hà Nội, Vietnam </span>
+                  <a href="callto: 1900 7650" > <i class="fa-solid fa-phone"></i>1900 7650</a>
+                  <a href="mailto: support@sapo.v"> <i class="fa-regular fa-envelope"></i>support@sapo.vn</a>
+                  <div class="footer__block__icons">
+                    <i class="header-link__icon fa-brands fa-facebook-f"></i>
+                    <i class="header-link__icon fa-brands fa-pinterest"></i>
+                    <i class="header-link__icon fa-brands fa-google-plus-g"></i>
+                    <i class="header-link__icon fa-brands fa-square-instagram"></i>
+                  </div>
+                  <small>Bản quyền thuộc về <span>DQDT Team</span> | Cung cấp bởi<a href="">Sapo</a></small>
+                </div>
+            </footer>
+            <!-- End footer Foot -->
+            <div class="succesful-register">
+                    <section class="succesful-notifi">
+                                <h3>Bạn đã đăng kí thành công</h3>
+                                <i class="fa-solid fa-xmark"></i>
+                    </section>
+            </div>
+
+        <!-- Form -->
+       
+       
+        
+        
+        <script src="../register/js/Validator.js"></script>
+        <script>
+             Validator({
+                form : "#form-rigister-1",
+                formGroup: ".rg-form-control",
+                errorMess:".rg-form-message",
+                submit:".register-form__register",
+                rules: [
+                Validator.isRequired('#last-name'),
+                Validator.isRequired('#first-name'),
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email' , "Trường này phải là email"),
+                Validator.isRequired('#take-email'),
+                Validator.isEmail('#take-email' , "Trường này phải là email"),
+                Validator.isRequired('#password'),
+                Validator.isPassword('#password', "Vui lòng nhập mật khẩu lớn hơn 6 kí tự" ,6),
+                // Validator.isRequired('#password_confirmation'),
+                // Validator.isConfirmPassword('#password_confirmation' , function () {
+                //   return document.querySelector('#password').value;
+                // } , "Mật khẩu của bạn chưa trùng khớp!"),
+                ],
+                onSubmit(data) {
+                  return data;
+                },
+                getSubmitted(data) {
+                    return data;
+                },
+               
+               
+            });
+        </script>
+        
+</body>
+</html>
