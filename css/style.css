@@ -262,6 +262,11 @@ body {
     font-size: 1.3rem;
 }
 
+.header-navigation__item {
+    text-decoration: none;
+    color:var(--text-color-gray-bland);
+}
+
 .header-link__icon {
     padding: 8px 13px;
     text-decoration: none;
@@ -276,6 +281,9 @@ body {
 .header-link__cart {
     width: 162px;
     position: relative;
+    text-decoration: none;
+    display: block;
+    color:#000;
 }
 
 .header-link__cart--none {

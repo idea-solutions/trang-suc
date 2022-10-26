@@ -229,6 +229,7 @@ var btnUser = document.querySelector('.btn-user');
 
 userLogin.addEventListener('click', function () {
     btnUser.classList.toggle('show');
+    console.log(123)
 })
 var customer = document.querySelector('.customer');
 

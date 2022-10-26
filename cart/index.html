@@ -104,14 +104,14 @@
                       <i class="fa-solid fa-magnifying-glass"></i>
                       <i class="mobile-user fa-solid fa-user">
                         <div class="btn-user btn-user__mobile">
-                          <button class="btn-register">
+                          <a href="../register/" class="btn-register">
                             <i class=" fa-solid fa-user-plus"></i>Đăng kí
-                          </button>
-                          <button class="btn-login">
+                          </a>
+                          <a href="../login/" class="btn-login">
                             <i class="fa-solid fa-right-to-bracket"></i>
                             Đăng nhập
-                          </button>
-                          <div class="header-link__cart">
+                          </a>
+                          <a href="../cart/" class="header-link__cart">
                            <small> Giỏ hàng</small>
                             <i class="header-link__bag fa-solid fa-bag-shopping">
                                 <div class="header-link__bag-items">
@@ -119,7 +119,7 @@
                                 </div>
                             </i>   
                             <span class="header-link__amount hide-mobile">0</span>
-                        </div>
+                        </a>
                         </div>
                       </i>
 
@@ -131,7 +131,7 @@
                             <a href="../" class="header-navigation__link">Trang chủ</a>
                         </li>
                         <li class="header-navigation__item">
-                            <div class="header-navigation__link header-navigation__link-1">
+                            <a href="../collection/" class="header-navigation__link header-navigation__link-1">
                                 Sản phẩm
                                 <i class="header-navigation__link-icon fa-solid fa-chevron-down"></i>
                                 <ul class="header-navigation__products hide-mobile">
@@ -176,7 +176,7 @@
                                     </li>
                                 </ul>
                           
-                            </div>
+                            </a>
                         </li>
                         <li class="header-navigation__item">
                             <a href="" class="header-navigation__link">Blog</a>
@@ -194,7 +194,7 @@
         <div class="content-full">
            <div class="content">
             <div class="content__cart">
-                <a class="register-form__home content__cart__link" href="">Trang chủ</a><i class="register-form__right content__cart__right fa-solid fa-angle-right"></i>
+                <a class="register-form__home content__cart__link" href="../>Trang chủ</a><i class="register-form__right content__cart__right fa-solid fa-angle-right"></i>
                 <span class="register-form__span content__cart__span"> Đăng kí tài khoảng</span>
                 <small class="content__cart__small">Không có sản phẩm nào trong giỏ hàng. Quay lại <a href="../">cửa hàng</a>  để tiếp tục mua sắm.</small>
         </div>
@@ -220,47 +220,13 @@
                 </div>
             </footer>
             <!-- End footer Foot -->
-            <div class="succesful-register">
-                    <section class="succesful-notifi">
-                                <h3>Bạn đã đăng kí thành công</h3>
-                                <i class="fa-solid fa-xmark"></i>
-                    </section>
-            </div>
-
+            
         <!-- Form -->
        
        
         
         
-        <script src="../register/js/Validator.js"></script>
-        <script>
-             Validator({
-                form : "#form-rigister-1",
-                formGroup: ".rg-form-control",
-                errorMess:".rg-form-message",
-                submit:".register-form__register",
-                rules: [
-                Validator.isRequired('#last-name'),
-                Validator.isRequired('#first-name'),
-                Validator.isRequired('#email'),
-                Validator.isEmail('#email' , "Trường này phải là email"),
-                Validator.isRequired('#password'),
-                Validator.isPassword('#password', "Vui lòng nhập mật khẩu lớn hơn 6 kí tự" ,6),
-                // Validator.isRequired('#password_confirmation'),
-                // Validator.isConfirmPassword('#password_confirmation' , function () {
-                //   return document.querySelector('#password').value;
-                // } , "Mật khẩu của bạn chưa trùng khớp!"),
-                ],
-                onSubmit(data) {
-                  return data;
-                },
-                getSubmitted(data) {
-                    return data;
-                },
-               
-               
-            });
-        </script>
+        <script src="./js/index.js"></script>
         
 </body>
 </html>

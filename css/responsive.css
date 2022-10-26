@@ -260,7 +260,7 @@
         display: block;
     }
     .slider {
-        background-image: url("./assets/home/slider-mobile.webp");
+        background-image: url(../img/slider-mobile.webp);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

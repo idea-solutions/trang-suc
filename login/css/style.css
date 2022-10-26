@@ -11,10 +11,7 @@
    padding: 19px 0px;
 }
 
-.rg-form-control span {
-    position: relative;
-    top: -7px;
-}
+
 /* responsive */
 @media (max-width:64rem) {
 
