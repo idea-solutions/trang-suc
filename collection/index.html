@@ -235,6 +235,14 @@
                                 
                                 <!-- item render -->
                             </div>
+
+                            <ul class="show-pages">
+                                <li class="show-page"><i class="fa-solid fa-angles-left"></i></li>
+                                <li class="show-page ">1</li>
+                                <li class="show-page">2</li>
+                                <li class="show-page">3</li>
+                                <li class="show-page "><i class="fa-solid fa-angles-right"></i></li>
+                            </ul>
                         </div>
                         <div class="content__right">
                             <h3>Danh mục</h3>
@@ -270,15 +278,30 @@
                                     </a>
                                 </li>
                             </ul>
-                            <span class="content__cost">Theo mức giá</span>
-                            <div class="content-slider">
-                                <span class="content__article content-slider__left"></span>
-                                <span class="content__article content-slider__right"></span>
-                            </div>
+                            
                             <div class="content-price">
-                                <button class="content-price__btn content-price__first">0</button>
-                                <span>-</span>
-                                <button class="content-price__btn content-price__end">100.000.000</button>
+                                <div class="wrapper">
+                                    <h2>Lọc theo giá</h2>
+                                    <div class="price-input">
+                                        <div class="field">
+                                            <span>Min</span>
+                                            <input type="number" value="2500" class="input-min">
+                                        </div>
+                                        <div class="separator">-</div>
+                                        <div class="field">
+                                            <span>Max</span>
+                                            <input type="number" value="7500" class="input-max">
+                                        </div>
+                                    </div>
+                                    <!--END:price input  -->
+                                    <div class="slider-price">
+                                        <div class="progress"></div>
+                                        <div class="range-input">
+                                            <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
+                                            <input type="range" class="range-max" min="0" max="10000" value="7500" step="100">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <button class="content__ferform">Lọc giá</button>
 

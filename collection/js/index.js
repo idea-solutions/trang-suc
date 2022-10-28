@@ -8,9 +8,10 @@ var btnUser = document.querySelector('.btn-user');
 userLogin.addEventListener('click', function () {
     btnUser.classList.toggle('show');
 })
-console.log(123)
 
-
+const rangeInputs = document.querySelectorAll('.range-input input')
+const priceInputs = document.querySelectorAll('.price-input input')
+const progress = document.querySelector('.slider-price .progress')
 
 var headerNavigation = document.querySelector('.header-navigation')
 const media = [
@@ -90,85 +91,211 @@ function showVND(element) {
 
 
 // collectio js
-const collection = [
-    {img:"../collection/image-collection.webp",
+let collection = [
+    {img:"../collection/1.webp",
     name:"Nhẫn vòng ADV",
-    price:700
+    price:7000
     },
-    {img:"../collection/image-collection.webp",
-    name:"Bông tai cao cấp Biz",
-    price:350
+    {img:"../collection/2.webp",
+    name:"Nhẫn đôi kim cương",
+    price:3500
     },
-    {img:"../collection/image-collection.webp",
+    {img:"../collection/3.webp",
     name:"Nhẫn ngọc trai cao cấp",
-    price:700
+    price:7000
     },
-    {img:"../collection/image-collection.webp",
+    {img:"../collection/4.webp",
+    name:"Vòng tay cao cấp",
+    price:5000
+    },
+    {img:"../collection/5.webp",
+    name:"Nhẫn vàng cao cấp",
+    price:1000
+    },
+    {img:"../collection/6.webp",
+    name:"Nhẫn vòng ADV",
+    price:7000
+    },
+    {img:"../collection/7.webp",
+    name:"Bông tai cao cấp Biz",
+    price:3500
+    },
+    {img:"../collection/8.webp",
+    name:"Nhẫn ngọc trai cao cấp",
+    price:7000
+    },
+    {img:"../collection/9.webp",
     name:"Vòng tay cao cấp",
     price:500
     },
-    {img:"../collection/image-collection.webp",
-    name:"Nhẫn vàng cao cấp",
-    price:100
-    },
-    {img:"../collection/image-collection.webp",
-    name:"Nhẫn vòng ADV",
-    price:700
-    },
-    {img:"../collection/image-collection.webp",
-    name:"Bông tai cao cấp Biz",
-    price:350
-    },
-    {img:"../collection/image-collection.webp",
+    {img:"../collection/10.webp",
     name:"Nhẫn ngọc trai cao cấp",
-    price:700
+    price:7600
     },
-    {img:"../collection/image-collection.webp",
-    name:"Vòng tay cao cấp",
-    price:500
+    {img:"../collection/11.webp",
+    name:" Vòng tay cao cấp",
+    price:2500
     },
-    {img:"../collection/image-collection.webp",
-    name:"Nhẫn vàng cao cấp",
-    price:100
+    {img:"../collection/12.webp",
+    name:" Nhẫn ngọc trai cao cấp",
+    price:4500
     },
-    {img:"../collection/image-collection.webp",
-    name:"Nhẫn vòng ADV",
-    price:700
+    {img:"../collection/13.webp",
+    name:" Vòng tay cao cấp",
+    price:1500
     },
-    {img:"../collection/image-collection.webp",
-    name:"Bông tai cao cấp Biz",
-    price:350
+    {img:"../collection/14.webp",
+    name:" Nhẫn vàng cao cấp",
+    price:1000
     },
-    {img:"../collection/image-collection.webp",
-    name:"Nhẫn ngọc trai cao cấp",
-    price:700
+    {img:"../collection/15.webp",
+    name:" Nhẫn vòng ADV",
+    price:7000
     },
-    {img:"../collection/image-collection.webp",
-    name:"Vòng tay cao cấp",
-    price:500
+    {img:"../collection/16.webp",
+    name:" Bông tai cao cấp Biz",
+    price:3500
     },
-    {img:"../collection/image-collection.webp",
-    name:"Nhẫn vàng cao cấp",
-    price:100
+    {img:"../collection/17.webp",
+    name:" Nhẫn ngọc trai cao cấp",
+    price:7000
+    },
+    {img:"../collection/18.webp",
+    name:" Vòng tay cao cấp",
+    price:5000
+    },
+    {img:"../collection/19.webp",
+    name:" Nhẫn vàng cao cấp",
+    price:1000
+    },
+    {img:"../collection/20.webp",
+    name:" Nhẫn vàng cao cấp",
+    price:1000
     },
 ] 
 var contentLeft = document.querySelector('.content__left');
 
-var htmls = collection.map(item => {
-    return `
-    <div class="slider-item__link content__item">
-    <div class="slider-item__parent-img">
-      <img class="slider-item__img" src=${item.img} alt="">
-      <div class="slider-item__bag ">
-          <i class="fa-solid fa-bag-shopping"></i>
+var showPages = document.querySelectorAll('.show-page');
 
-      </div>   
+
+
+
+let amountSilde = 7 ;
+let numberPage = 1;
+function getIndex(index) {
+    numberPage =  index;
+  }
+
+ 
+function showIcon(showPages , index) {
+    if(showPages[showPages.length - 2].classList.contains('active')) {
+        showPages[showPages.length - 1].style.opacity='0'
+        showPages[showPages.length - 1].style.cursor='unset'
+        showPages[0].style.opacity='1';
+        } 
+    
+        if(showPages[1].classList.contains('active')) {
+            showPages[0].style.opacity='0';
+            showPages[0].style.cursor='unset';
+            showPages[showPages.length - 1].style.opacity='1'
+        }
+        if(showPages[index].classList.contains('active')) {
+            getIndex(index)
+        }
+        
+       
+}
+
+Array.from(showPages).forEach((page,index) => {
+    if(numberPage == 1) {
+        showPages[1].classList.add('active');
+    }
+         showIcon(showPages ,index);
+    page.addEventListener('click' , function(e) {
+        Array.from(showPages).forEach(pageEvent => {
+           
+            if(pageEvent.classList.contains('active')) {
+                pageEvent.classList.remove('active');
+            }
+
+        })
+       
+        page.classList.add('active');
+        
+        showIcon(showPages ,index);
+        renderCollection()
+    })
+    
+})
+
+
+
+
+function renderCollection () {
+    let newCollection = collection
+    newCollection = newCollection.filter((item,index) => index >= (numberPage - 1 ) * amountSilde && index <= amountSilde * numberPage - 1 );
+    var htmls = newCollection.map(item => {
+        return `
+        <div class="slider-item__link content__item">
+        <div class="slider-item__parent-img">
+          <img class="slider-item__img" src=${item.img} alt="">
+          <div class="slider-item__bag ">
+              <i class="fa-solid fa-bag-shopping"></i>
+    
+          </div>   
+        </div>
+          <span>${item.name}</span>
+          <small>${item.price}.000đ</small>
+                         
     </div>
-      <span>${item.name}</span>
-      <small>${item.price}.000đ</small>
-                     
-</div>
-    `
-}).join(' ');
+        `
+    }).join(' ');
+    
+    contentLeft.innerHTML = htmls;
+}
 
-contentLeft.innerHTML = htmls;
+renderCollection()
+
+
+
+let priceGap = 1000;
+rangeInputs.forEach(input => {
+    input.addEventListener('input' , function (e) {
+        let minVal = parseInt(rangeInputs[0].value);
+        let maxVal = parseInt(rangeInputs[1].value);
+        // percent
+        if(maxVal - minVal < priceGap) {
+            if(e.target.className === 'range-min') {
+                rangeInputs[0].value = maxVal - priceGap;
+            }else{
+                rangeInputs[1].value = minVal + priceGap;
+            }
+        }else{
+            priceInputs[0].value = minVal;
+            priceInputs[1].value = maxVal;
+            progress.style.left = (minVal / rangeInputs[0].max) * 100 + "%"
+            progress.style.right = 100 - (maxVal / rangeInputs[1].max) * 100 + "%"
+            
+        }
+    })
+})
+
+priceInputs.forEach(input => {
+    input.addEventListener('input' , function (e) {
+        let minVal = parseInt(priceInputs[0].value);
+        let maxVal = parseInt(priceInputs[1].value);
+        // percent
+        console.log(minVal)
+        if(maxVal  - minVal >= priceGap) {
+            if(e.target.className === 'input-min') {
+                rangeInputs[0].value = minVal ;
+                progress.style.left = (minVal / rangeInputs[0].max) * 100 + "%"
+            }else{
+                rangeInputs[1].value = maxVal;
+                progress.style.right = 100 - (maxVal / rangeInputs[1].max) * 100 + "%"
+            }
+        }
+    })
+})
+
+
