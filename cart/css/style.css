@@ -1,24 +1,19 @@
-
-
-
-
 .content {
-    padding: 100px 0px;
+  padding: 100px 0px;
 }
 
 .content__cart {
-    text-align: center;
+  text-align: center;
 }
 
 .content__cart__small {
-    display: block;
-    margin-top: 50px;
-    font-size: 1.4rem;
-    color:var(--text-color-gray-bland);
+  display: block;
+  margin-top: 50px;
+  font-size: 1.4rem;
+  color: var(--text-color-gray-bland);
 }
 
 .content__cart__small a {
-    color:var(--primary-color);
-    text-decoration: none;
+  color: var(--primary-color);
+  text-decoration: none;
 }
-
